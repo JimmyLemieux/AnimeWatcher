@@ -1,4 +1,15 @@
+
+
+![Some Anime](http://is2.4chan.org/c/1560470679005.jpg)
+
 ## What we have
-    So most of the basic things are done so far. We have a class that can modify a URL and scrape through every single show title that is on each of these pages.
+
+So most of the basic things are done so far. We have a class that can modify a URL and scrape through every single show title that is on each of these pages.
+
+
     > What I plan to do next is gather more information about each of these show titles. Maybe brief synopsis and genre. I will also have to go through each of the links associated with the tiles and find all episodes
-    
+
+    > A Quick update I have started to find more of the other tags that are related to the name of the show. Such as Genre, Status, Date and Plot Summary!
+        I need to set up the *SSH* for my bitbucket to make it easier to push things to my repo
+
+    > Another update, I was able to put all of the shows on the main page into a big object. The next step is to get the individual episodes from each show title
