@@ -13,3 +13,5 @@ So most of the basic things are done so far. We have a class that can modify a U
         I need to set up the *SSH* for my bitbucket to make it easier to push things to my repo
 
     > Another update, I was able to put all of the shows on the main page into a big object. The next step is to get the individual episodes from each show title
+    
+    Before I continue I need to make sure that I can actually find and somehow get the source URL for a video

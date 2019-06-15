@@ -44,7 +44,7 @@ class Scraper:
 
         #Each list Item will have an a tag that will have to be followed and then scrapped
         #A show will now have a list of episodes and then hopefully video links or some sort of source
-        
+
         if(len(listItems)): 
             for item in listItems:
                 show = {}
@@ -64,8 +64,19 @@ class Scraper:
         print "#### DONE ####"
 
 
+    def testScrapeVideo(self, url):
+        website = urlopen(url).read()
+        soup = BeautifulSoup(website, "html.parser")
+        #I need to know find a div with id load_anime
+        animeDiv = soup.find("div", attrs={"id":"load_anime"})
+        animeIframe = animeDiv.find("iframe")
+        print "https:" + self.encodeString(animeIframe.attrs["src"])
+
+
+
 while __name__ == '__main__':
     #Main
     scrape = Scraper()
-    scrape.urlMod(50)
+    #scrape.urlMod(50)
+    scrape.testScrapeVideo("https://www4.gogoanime.io/009-1-dub-episode-1")
     break
