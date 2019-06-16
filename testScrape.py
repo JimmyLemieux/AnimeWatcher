@@ -23,6 +23,13 @@ class Scraper:
         
         print shows
 
+    def showUrlMod(self, item):
+        showURL = "https://www4.gogoanime.io"
+        showEndpoint = self.encodeString(item.find('a').attrs['href'])
+        showURL += showEndpoint
+        return showURL
+
+
     def scrapeShowLogic(self, url, shows):
         website = urlopen(url).read()
         soup = BeautifulSoup(website, 'html.parser')
@@ -49,6 +56,17 @@ class Scraper:
             for item in listItems:
                 show = {}
                 showTitle = self.encodeString(item.text)
+
+                #See if we can find all of the a tags and there source links from here
+
+                showURL = self.showUrlMod(item)
+
+                #With this showURL we should now ho and scrape each of the episodes that are apart of a show
+                #self.scrapeShowEpisodeLogic(showURL)
+
+                show['showURL'] = showURL
+
+
                 show['showTitle'] = showTitle
                 #This is returning more html code that needs to be scrapped further
                 linkAttrs = self.encodeString(item.attrs['title'])
@@ -64,19 +82,33 @@ class Scraper:
         print "#### DONE ####"
 
 
-    def testScrapeVideo(self, url):
+    #This is for when we actuallly want to get the video embed link...
+    def scrapeEpisodeVideo(self, url):
         website = urlopen(url).read()
         soup = BeautifulSoup(website, "html.parser")
         #I need to know find a div with id load_anime
         animeDiv = soup.find("div", attrs={"id":"load_anime"})
         animeIframe = animeDiv.find("iframe")
-        print "https:" + self.encodeString(animeIframe.attrs["src"])
+        showLink = "https:" + self.encodeString(animeIframe.attrs["src"])
+        return showLink
+        #Now that we have the show link we can go ahead and go into the  scrapping og that page
+
+
+    #Need Selenium for this section of the code
+    def scrapeShowEpisodeLogic(self, url):
+        #The url here is for each of the internal episodes for the show
+        website = urlopen(url).read()
+        soup = BeautifulSoup(website, "html.parser")
+        linksDiv = soup.find("div", attrs={"class":"anime_video_body"})
+        print linksDiv
+
+
 
 
 
 while __name__ == '__main__':
     #Main
     scrape = Scraper()
-    #scrape.urlMod(50)
-    scrape.testScrapeVideo("https://www4.gogoanime.io/009-1-dub-episode-1")
+    scrape.urlMod(50)
+    #scrape.testScrapeVideo("https://www4.gogoanime.io/009-1-dub-episode-1")
     break

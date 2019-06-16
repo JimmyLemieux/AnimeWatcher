@@ -1,6 +1,4 @@
-
-
-![Some Anime](http://is2.4chan.org/c/1560470679005.jpg)
+![Some Anime](http://is2.4chan.org/c/1560470679005.jpg) ![Other Anime](http://is2.4chan.org/c/1558566884494.jpg)
 
 ## What we have
 
@@ -13,5 +11,13 @@ So most of the basic things are done so far. We have a class that can modify a U
         I need to set up the *SSH* for my bitbucket to make it easier to push things to my repo
 
     > Another update, I was able to put all of the shows on the main page into a big object. The next step is to get the individual episodes from each show title
-    
+
     Before I continue I need to make sure that I can actually find and somehow get the source URL for a video
+
+## Quick Road Block
+
+    > So I ran into a weird problem when scraping the individual episodes for a show. It appears that when I try to scrape the page, there is JS that is still to be executed, therefore I cannot find the specific elements that I need.
+    There is a tool called Selenium that has controls for me to either wait or force execute these JS triggers. 
+
+    **I am going to leave this for now and continue with just scrapping. I still need to follow each show link to get the individual
+    episodes!**
