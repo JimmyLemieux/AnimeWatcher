@@ -77,9 +77,11 @@ class Scraper:
                 #Here since we now have the url that will take us to the episodes we can then call the code that will handle this page
                 episodeLinks = self.scrapeShowEpisodeLogic(show['showURL'])
 
-                # show['episodeLinks'] = episodeLinks
+                # loop through the episode links and then you can add them in there
 
-                # loop through 
+                for link in episodeLinks:
+                    videoLink = self.scrapeEpisodeVideo(link)
+                    print videoLink
 
 
 
