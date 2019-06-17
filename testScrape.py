@@ -2,13 +2,14 @@ import requests
 import json
 from urllib import urlopen
 from bs4 import BeautifulSoup
-
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 
+#mysql connector is beggining here
+import mysql.connector as mysql
 
 class Scraper:
     def __init__(self):
@@ -73,17 +74,24 @@ class Scraper:
 
                 show['showURL'] = showURL
 
+                print showURL
 
                 #Here since we now have the url that will take us to the episodes we can then call the code that will handle this page
                 episodeLinks = self.scrapeShowEpisodeLogic(show['showURL'])
 
+                videoLinks = []
+
                 # loop through the episode links and then you can add them in there
+
+                print showTitle
 
                 for link in episodeLinks:
                     videoLink = self.scrapeEpisodeVideo(link)
-                    print videoLink
+                    #print videoLink
+                    videoLinks.append(videoLink)
 
 
+                show['episodes'] = videoLinks
 
 
                 show['showTitle'] = showTitle
