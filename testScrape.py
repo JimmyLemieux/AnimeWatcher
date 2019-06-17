@@ -3,6 +3,12 @@ import json
 from urllib import urlopen
 from bs4 import BeautifulSoup
 
+from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import TimeoutException
+
 
 class Scraper:
     def __init__(self):
@@ -14,7 +20,7 @@ class Scraper:
     def encodeString(self, string):
         return string.encode('utf8')
 
-    def urlMod(self, pages):
+    def initShowObject(self, pages):
         URL = ""
         shows = []
         for i in xrange(pages):
@@ -22,6 +28,7 @@ class Scraper:
             self.scrapeShowLogic(URL, shows)
         
         print shows
+
 
     def showUrlMod(self, item):
         showURL = "https://www4.gogoanime.io"
@@ -67,6 +74,16 @@ class Scraper:
                 show['showURL'] = showURL
 
 
+                #Here since we now have the url that will take us to the episodes we can then call the code that will handle this page
+                episodeLinks = self.scrapeShowEpisodeLogic(show['showURL'])
+
+                # show['episodeLinks'] = episodeLinks
+
+                # loop through 
+
+
+
+
                 show['showTitle'] = showTitle
                 #This is returning more html code that needs to be scrapped further
                 linkAttrs = self.encodeString(item.attrs['title'])
@@ -76,10 +93,14 @@ class Scraper:
                 for i in soup.findAll('p'):
                     meta.append(self.encodeString(i.text))
                 show['meta'] = meta
+                print show
                 linkShows.append(show)
-                pass
+
             shows.append(linkShows)
+        
         print "#### DONE ####"
+
+
 
 
     #This is for when we actuallly want to get the video embed link...
@@ -94,13 +115,37 @@ class Scraper:
         #Now that we have the show link we can go ahead and go into the  scrapping og that page
 
 
+
+
     #Need Selenium for this section of the code
+    #This will find the episodes and the link to the page where the video will be
     def scrapeShowEpisodeLogic(self, url):
+
+        episodes = []
         #The url here is for each of the internal episodes for the show
-        website = urlopen(url).read()
-        soup = BeautifulSoup(website, "html.parser")
-        linksDiv = soup.find("div", attrs={"class":"anime_video_body"})
-        print linksDiv
+
+        browser = webdriver.Chrome(executable_path=r"/Users/j/Desktop/animewatcher/chromedriver")
+        browser.get(url)
+
+        episodeDiv = browser.find_element_by_id('load_ep')
+
+        
+        elems = browser.find_elements_by_xpath("//a[@href]")
+        for elem in elems:
+            try:
+                episodeLink = elem.get_attribute('href')
+                if episodeLink and '-episode-' in episodeLink:
+                    episodes.append(self.encodeString(episodeLink))
+            except:
+                pass
+
+        return episodes
+
+        # newUrl =  browser.current_url
+        # website = urlopen(newUrl).read()
+        # soup = BeautifulSoup(website, "html.parser")
+        # linksDiv = soup.find("div", attrs={"class":"anime_video_body"})
+        # print linksDiv.prettify()
 
 
 
@@ -109,6 +154,8 @@ class Scraper:
 while __name__ == '__main__':
     #Main
     scrape = Scraper()
-    scrape.urlMod(50)
+    #This will init the scrapping of the episodes and place into an object
+    
+    scrape.initShowObject(50)
     #scrape.testScrapeVideo("https://www4.gogoanime.io/009-1-dub-episode-1")
     break
