@@ -25,5 +25,10 @@ class DataBase():
     def deleteAllShows(self):
         x = self.ancol.delete_many({})
         print "successfully deleted " + x.deleted_count
+    
+    def sortShowsByName(self):
+        shows = self.mycol.find().sort("showName")
+        for i in shows:
+            print i
 
     
