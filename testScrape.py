@@ -14,8 +14,9 @@ from selenium.common.exceptions import TimeoutException
 # import mysql.connector as mysql
 
 class Scraper:
-    def __init__(self):
+    def __init__(self, numPages):
         #we can begin to call the url modifier
+        self.initShowObject(numPages)
         pass
 
     #getters and setters
@@ -160,15 +161,3 @@ class Scraper:
                 pass
         
         return episodes
-
-
-
-
-while __name__ == '__main__':
-    #Main
-    scrape = Scraper()
-    #This will init the scrapping of the episodes and place into an object
-    
-    scrape.initShowObject(50)
-    #scrape.testScrapeVideo("https://www4.gogoanime.io/009-1-dub-episode-1")
-    break
