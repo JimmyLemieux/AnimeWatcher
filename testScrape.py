@@ -1,3 +1,5 @@
+import sys
+import time
 import requests
 import json
 from urllib import urlopen
@@ -9,14 +11,14 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 
 #mysql connector is beggining here
-import mysql.connector as mysql
+# import mysql.connector as mysql
 
 class Scraper:
     def __init__(self):
-        #We can begin to call the url modifier
+        #we can begin to call the url modifier
         pass
 
-    #Getters and Setters
+    #getters and setters
 
     def encodeString(self, string):
         return string.encode('utf8')
@@ -28,14 +30,24 @@ class Scraper:
             URL = "https://www4.gogoanime.io/anime-list.html?page={0}".format(i)
             self.scrapeShowLogic(URL, shows)
         
-        print shows
-
 
     def showUrlMod(self, item):
         showURL = "https://www4.gogoanime.io"
         showEndpoint = self.encodeString(item.find('a').attrs['href'])
         showURL += showEndpoint
         return showURL
+
+
+    def utilPrint(self, show):
+        print 'PRINTING SHOW--'
+        print 'TITLE: ' + show['showTitle']
+        print 'EPs: '
+        for i in show['episodes']:
+            print i
+
+        print 'META: '       
+        for i in show['meta']:
+           print i 
 
 
     def scrapeShowLogic(self, url, shows):
@@ -55,8 +67,6 @@ class Scraper:
 
         listItems = aniListings.findAll('li')  
 
-        linkShows = []
-
         #Each list Item will have an a tag that will have to be followed and then scrapped
         #A show will now have a list of episodes and then hopefully video links or some sort of source
 
@@ -74,8 +84,6 @@ class Scraper:
 
                 show['showURL'] = showURL
 
-                print showURL
-
                 #Here since we now have the url that will take us to the episodes we can then call the code that will handle this page
                 episodeLinks = self.scrapeShowEpisodeLogic(show['showURL'])
 
@@ -83,18 +91,18 @@ class Scraper:
 
                 # loop through the episode links and then you can add them in there
 
-                print showTitle
-
                 for link in episodeLinks:
                     videoLink = self.scrapeEpisodeVideo(link)
-                    #print videoLink
                     videoLinks.append(videoLink)
+
 
 
                 show['episodes'] = videoLinks
 
 
                 show['showTitle'] = showTitle
+
+
                 #This is returning more html code that needs to be scrapped further
                 linkAttrs = self.encodeString(item.attrs['title'])
                 soup = BeautifulSoup(linkAttrs, 'html.parser')
@@ -102,11 +110,14 @@ class Scraper:
                 meta = []
                 for i in soup.findAll('p'):
                     meta.append(self.encodeString(i.text))
+                           
+                              
                 show['meta'] = meta
-                print show
-                linkShows.append(show)
 
-            shows.append(linkShows)
+                print '##############################################################################\n\n'
+                self.utilPrint(show)
+                print '##############################################################################\n\n'
+                shows.append(show)
         
         print "#### DONE ####"
 
@@ -130,33 +141,25 @@ class Scraper:
     #Need Selenium for this section of the code
     #This will find the episodes and the link to the page where the video will be
     def scrapeShowEpisodeLogic(self, url):
-
+        
         episodes = []
         #The url here is for each of the internal episodes for the show
 
-        browser = webdriver.Chrome(executable_path=r"/Users/j/Desktop/animewatcher/chromedriver")
+        browser = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver")
         browser.get(url)
 
-        episodeDiv = browser.find_element_by_id('load_ep')
+        parent = browser.find_element_by_id('load_ep')
 
-        
-        elems = browser.find_elements_by_xpath("//a[@href]")
-        for elem in elems:
+        links = parent.find_elements_by_tag_name("a")
+
+        for link in links:
             try:
-                episodeLink = elem.get_attribute('href')
-                if episodeLink and '-episode-' in episodeLink:
-                    episodes.append(self.encodeString(episodeLink))
+                episodeLink = link.get_attribute('href')
+                episodes.append(self.encodeString(episodeLink))
             except:
                 pass
-
+        
         return episodes
-
-        # newUrl =  browser.current_url
-        # website = urlopen(newUrl).read()
-        # soup = BeautifulSoup(website, "html.parser")
-        # linksDiv = soup.find("div", attrs={"class":"anime_video_body"})
-        # print linksDiv.prettify()
-
 
 
 

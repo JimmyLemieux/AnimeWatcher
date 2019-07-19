@@ -1,6 +1,11 @@
-import mysql.connector as mysql
+import pymongo
 
-class DataBase:
 
+class DataBase():
     def __init__(self):
-        pass
+        client = pymongo.MongoClient("mongodb://localhost:27017/")
+        mydb = client['testdb']
+        mycol = mydb['customers']
+        mycol.insert_one({"name" : "John", "address": "Highway"})
+        print client.list_database_names()
+        
