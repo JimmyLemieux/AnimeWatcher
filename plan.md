@@ -21,3 +21,8 @@ So most of the basic things are done so far. We have a class that can modify a U
 
     **I am going to leave this for now and continue with just scrapping. I still need to follow each show link to get the individual
     episodes!**
+
+## Some more updates
+    Today was a very productive day in the sense of these things. I figured out the issues I was having with the scraper. It was a simple fix that had something to do with the selenium driver. I was finding all the a tags on the current screen and I was getting random episodes that apperered in redundant locations across the screen. So instead I just limited the area of search. Which is something that I should have done from the beginning.
+
+    I also was able to get a local mongodb set up on ubuntu. I can start to store things in a local database 
