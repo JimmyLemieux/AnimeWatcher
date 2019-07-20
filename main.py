@@ -10,10 +10,6 @@ while __name__ == '__main__':
     db = DataBase()
     showCollection = db.getShowCollection()
     scrape = Scraper(50, showCollection)
-
-
-
-
     break
 
 
