@@ -4,30 +4,35 @@ import pymongo
 class DataBase():
     def __init__(self):
         client = pymongo.MongoClient("mongodb://localhost:27017/")
-        self.mydb = client['testdb']
-        self.mycol = mydb['customers']
-        self.ancol = mycol['someOther']
-        # ancol.insert_one({"name": "james"})
-        # for x in ancol.find():
-        #     print x
-        print mydb.list_collection_names()
+        self.__mydb = client['animewatcher'] # making a new database
+        self.__showCol = self.__mydb['SHOWS']
 
-    def createDatabase(self, dbName):
-        pass
+    def getDatabase(self):
+        if(self.__mydb):
+            return self.__mydb
+        else:
+            return None
+
+    def getShowCollection(self):
+        if self.__showCol:
+            return self.__showCol
+        return None
+
 
     def findShowByName(self, showName):
         pass
     
     def saveShow(self, showObj):
-        pass
-
+        # if there is no collection name with the showTitle, then make a new collection with the __showCol variable
+        self.__showCol.insertOne(showObj)
+        print showObj['showTitle'] + ' was inserted into the database'
 
     def deleteAllShows(self):
-        x = self.ancol.delete_many({})
+        x = self.__showCol.delete_many({})
         print "successfully deleted " + x.deleted_count
     
-    def sortShowsByName(self):
-        shows = self.mycol.find().sort("showName")
+    def sortAllShowsByName(self):
+        shows = self.__showCol.find().sort("showName")
         for i in shows:
             print i
 

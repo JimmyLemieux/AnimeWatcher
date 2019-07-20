@@ -14,8 +14,9 @@ from selenium.common.exceptions import TimeoutException
 # import mysql.connector as mysql
 
 class Scraper:
-    def __init__(self, numPages):
+    def __init__(self, numPages, dbCollection):
         #we can begin to call the url modifier
+        self.dbCollection = dbCollection
         self.initShowObject(numPages)
         pass
 
@@ -118,6 +119,8 @@ class Scraper:
                 print '##############################################################################\n\n'
                 self.utilPrint(show)
                 print '##############################################################################\n\n'
+                self.dbCollection.insert_one(show)  
+                print "Inserted into the database"     
                 shows.append(show)
         
         print "#### DONE ####"
