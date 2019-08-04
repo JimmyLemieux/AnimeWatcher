@@ -3,7 +3,8 @@ import pymongo
 
 class DataBase():
     def __init__(self):
-        client = pymongo.MongoClient("mongodb://localhost:27017/")
+        client = pymongo.MongoClient("mongodb://dbUser:Jrrangers123321!@animecluster-shard-00-00-51bax.mongodb.net:27017,animecluster-shard-00-01-51bax.mongodb.net:27017,animecluster-shard-00-02-51bax.mongodb.net:27017/test?ssl=true&replicaSet=AnimeCluster-shard-0&authSource=admin&retryWrites=true&w=majority")
+        db = client.test
         self.__mydb = client['animewatcher'] # making a new database
         self.__showCol = self.__mydb['SHOWS']
 

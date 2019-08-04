@@ -26,3 +26,8 @@ So most of the basic things are done so far. We have a class that can modify a U
     Today was a very productive day in the sense of these things. I figured out the issues I was having with the scraper. It was a simple fix that had something to do with the selenium driver. I was finding all the a tags on the current screen and I was getting random episodes that apperered in redundant locations across the screen. So instead I just limited the area of search. Which is something that I should have done from the beginning.
 
     I also was able to get a local mongodb set up on ubuntu. I can start to store things in a local database 
+
+## Database updates
+    So instead of wasting time and putting changes into a local database which is useless. I decided to use a VPS such as mongo atlas to store changes in a server that will be used on my front end.
+    > The only thing that I am consirned about is that the db only has 512MB disk. IDK if this can fit everything, but we are cheap and not going to upgrade
+    > I also just managed to get the atlas db to populate with the script.... now we wait....
