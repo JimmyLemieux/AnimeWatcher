@@ -80,14 +80,7 @@ class Scraper:
                     show = {}
                     showTitle = self.encodeString(item.text)
 
-                    #check if the showTitle is already present in the database, if it is then skip this entry
-
-
-
-
-
-
-
+                    #check if the showTitle is already present in the database, if it is then skip this entry                    
 
                     #See if we can find all of the a tags and there source links from here
 
@@ -133,6 +126,7 @@ class Scraper:
                     print showTitle + "{0}/{1}".format(counter, len(listItems))
                     counter += 1
         except:
+            print "There was an exception so we are skipping"
             pass
         print "#### DONE ####"
 
