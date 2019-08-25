@@ -157,9 +157,12 @@ class Scraper:
         browser = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver")
         browser.get(url)
 
-        parent = browser.find_element_by_id('load_ep')
-
-        links = parent.find_elements_by_tag_name("a")
+        try:
+            parent = browser.find_element_by_id('load_ep')
+            links = parent.find_elements_by_tag_name("a")
+        except:
+            print 'An error with the ep'
+            return
 
         for link in links:
             try:
