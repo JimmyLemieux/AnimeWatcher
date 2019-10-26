@@ -76,13 +76,12 @@ class Scraper:
                     #See if we can find all of the a tags and there source links from here
 
                     showURL = self.showUrlMod(item)
-
+                    print (showURL)
                     # we wont to pass this item if it is already in the database...
                     q = self.dbCollection.find({'showURL' : showURL});
 
-                    if q:
-                        print ('show is already here!')
-                        continue
+                    for x in q:
+                        print (x)
 
 
                     #With this showURL we should now ho and scrape each of the episodes that are apart of a show
