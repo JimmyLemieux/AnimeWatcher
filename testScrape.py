@@ -30,7 +30,11 @@ class Scraper:
         shows = []
         for i in xrange(pages - 1):
             URL = "https://www4.gogoanime.io/anime-list.html?page={0}".format(i + 1)
-            print 'Scraping page ' + URL
+            print ('Scraping page ' + URL)
+
+
+
+
             self.scrapeShowLogic(URL, shows)
         
 
@@ -39,19 +43,6 @@ class Scraper:
         showEndpoint = self.encodeString(item.find('a').attrs['href'])
         showURL += showEndpoint
         return showURL
-
-
-    def utilPrint(self, show):
-        print 'PRINTING SHOW--'
-        print 'TITLE: ' + show['showTitle']
-        print 'EPs: '
-        for i in show['episodes']:
-            print i
-
-        print 'META: '       
-        for i in show['meta']:
-           print i 
-
 
     def scrapeShowLogic(self, url, shows):
         try:
@@ -85,6 +76,14 @@ class Scraper:
                     #See if we can find all of the a tags and there source links from here
 
                     showURL = self.showUrlMod(item)
+
+                    # we wont to pass this item if it is already in the database...
+                    q = self.dbCollection.find({'showURL' : showURL});
+
+                    if q:
+                        print ('show is already here!')
+                        continue
+
 
                     #With this showURL we should now ho and scrape each of the episodes that are apart of a show
                     #self.scrapeShowEpisodeLogic(showURL)
@@ -122,13 +121,13 @@ class Scraper:
                     show['meta'] = meta
 
                     self.dbCollection.insert_one(show)  
-                    print "Inserted into the database"
-                    print showTitle + "{0}/{1}".format(counter, len(listItems))
+                    print ("Inserted into the database")
+                    print (showTitle + "{0}/{1}".format(counter, len(listItems)))
                     counter += 1
         except:
-            print "There was an exception so we are skipping"
+            print ('There was an exception so we are skipping')
             pass
-        print "#### DONE ####"
+        print ("#### DONE ####")
 
 
 
@@ -161,7 +160,7 @@ class Scraper:
             parent = browser.find_element_by_id('load_ep')
             links = parent.find_elements_by_tag_name("a")
         except:
-            print 'An error with the ep'
+            print ('An error with the ep')
             return
 
         for link in links:
