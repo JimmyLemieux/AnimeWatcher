@@ -14,9 +14,8 @@ from selenium.common.exceptions import TimeoutException
 # import mysql.connector as mysql
 
 class Scraper:
-    def __init__(self, numPages, dbCollection):
+    def __init__(self, numPages):
         #we can begin to call the url modifier
-        self.dbCollection = dbCollection
         self.initShowObject(numPages)
         pass
 
@@ -26,15 +25,10 @@ class Scraper:
         return string.encode('utf8')
 
     def initShowObject(self, pages):
-        URL = ""
         shows = []
         for i in xrange(pages - 1):
             URL = "https://www4.gogoanime.io/anime-list.html?page={0}".format(i + 1)
             print ('Scraping page ' + URL)
-
-
-
-
             self.scrapeShowLogic(URL, shows)
         
 
@@ -65,7 +59,7 @@ class Scraper:
             #Each list Item will have an a tag that will have to be followed and then scrapped
             #A show will now have a list of episodes and then hopefully video links or some sort of source
 
-            if(len(listItems)): 
+            if(len(listItems) > 0): 
                 counter = 1
                 for item in listItems:
                     show = {}
@@ -83,9 +77,12 @@ class Scraper:
                     #self.scrapeShowEpisodeLogic(showURL)
 
                     show['showURL'] = showURL
+                    
+                    print show
+                    continue
 
                     #Here since we now have the url that will take us to the episodes we can then call the code that will handle this page
-                    episodeLinks = self.scrapeShowEpisodeLogic(show['showURL'])
+                    episodeLinks = self.scrapeShowEpisodeLogic(showURL)
 
                     videoLinks = []
 
@@ -96,10 +93,7 @@ class Scraper:
                         videoLinks.append(videoLink)
 
 
-
                     show['episodes'] = videoLinks
-
-
                     show['showTitle'] = showTitle
 
 
@@ -113,10 +107,6 @@ class Scraper:
                             
                                 
                     show['meta'] = meta
-
-                    self.dbCollection.insert_one(show)  
-                    print ("Inserted into the database")
-                    print (showTitle + "{0}/{1}".format(counter, len(listItems)))
                     counter += 1
         except:
             print ('There was an exception so we are skipping')
