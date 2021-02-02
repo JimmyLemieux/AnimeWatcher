@@ -26,10 +26,11 @@ class Scraper:
 
     def initShowObject(self, pages):
         shows = []
-        for i in xrange(pages - 1):
-            URL = "https://www4.gogoanime.io/anime-list.html?page={0}".format(i + 1)
-            print ('Scraping page ' + URL)
-            self.scrapeShowLogic(URL, shows)
+        self.scrapeShowLogic("https://www4.gogoanime.io/anime-list.html?page={0}".format(5), shows)
+        # for i in xrange(pages - 1):
+        #     URL = "https://www4.gogoanime.io/anime-list.html?page={0}".format(i + 1)
+        #     print ('Scraping page ' + URL)
+
         
 
     def showUrlMod(self, item):
@@ -40,11 +41,10 @@ class Scraper:
 
     def scrapeShowLogic(self, url, shows):
         try:
-            website = urlopen(url).read()
+            website = requests.get(url).content
             soup = BeautifulSoup(website, 'html.parser')
-            
             #Start to find all of the show titles for each of the shows
-
+            print ("here")
             #The main section is in the body so we can start with that
             body = soup.body
 
@@ -78,9 +78,6 @@ class Scraper:
 
                     show['showURL'] = showURL
                     
-                    print show
-                    continue
-
                     #Here since we now have the url that will take us to the episodes we can then call the code that will handle this page
                     episodeLinks = self.scrapeShowEpisodeLogic(showURL)
 
@@ -107,6 +104,7 @@ class Scraper:
                             
                                 
                     show['meta'] = meta
+                    print (show)
                     counter += 1
         except:
             print ('There was an exception so we are skipping')
@@ -118,7 +116,7 @@ class Scraper:
 
     #This is for when we actuallly want to get the video embed link...
     def scrapeEpisodeVideo(self, url):
-        website = urlopen(url).read()
+        website = requests.get(url).content
         soup = BeautifulSoup(website, "html.parser")
         #I need to know find a div with id load_anime
         animeDiv = soup.find("div", attrs={"id":"load_anime"})
@@ -137,7 +135,8 @@ class Scraper:
         episodes = []
         #The url here is for each of the internal episodes for the show
 
-        browser = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver")
+        browser = webdriver.Firefox()
+        print ("hello")
         browser.get(url)
 
         try:
@@ -152,6 +151,5 @@ class Scraper:
                 episodeLink = link.get_attribute('href')
                 episodes.append(self.encodeString(episodeLink))
             except:
-                pass
-        
+                pass        
         return episodes

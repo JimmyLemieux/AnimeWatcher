@@ -1,0 +1,37 @@
+1612230279499	geckodriver	INFO	Listening on 127.0.0.1:61247
+1612230280534	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/5g/17w8dbxj523509c73rnz1fhw0000gn/T/rust_mozprofileruNNF2"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1612230283708	Marionette	INFO	Listening on port 61258
+1612230364553	geckodriver	INFO	Listening on 127.0.0.1:61330
+1612230365566	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/5g/17w8dbxj523509c73rnz1fhw0000gn/T/rust_mozprofileRDrW0t"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1612230367831	Marionette	INFO	Listening on port 61341
+1612230367936	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL context was lost.
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL context was lost.
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021121, line 1: WebGL context was lost.
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021121, line 1: WebGL context was lost.
+1612230423418	geckodriver	INFO	Listening on 127.0.0.1:61544
+1612230424436	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/5g/17w8dbxj523509c73rnz1fhw0000gn/T/rust_mozprofileNGt4uo"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1612230427005	Marionette	INFO	Listening on port 61556
+1612230427103	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL context was lost.
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL context was lost.
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021121, line 1: WebGL context was lost.
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021121, line 1: WebGL context was lost.
+1612230521484	geckodriver	INFO	Listening on 127.0.0.1:61796
+1612230522498	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/5g/17w8dbxj523509c73rnz1fhw0000gn/T/rust_mozprofileFA9UwL"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1612230524880	Marionette	INFO	Listening on port 61808
+1612230524974	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL context was lost.
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL context was lost.
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021121, line 1: WebGL context was lost.
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021121, line 1: WebGL context was lost.
+1612230561116	geckodriver	INFO	Listening on 127.0.0.1:62071
+1612230562133	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/5g/17w8dbxj523509c73rnz1fhw0000gn/T/rust_mozprofileg9006o"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1612230564575	Marionette	INFO	Listening on port 62082
+1612230564598	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'MarionetteEvents'
