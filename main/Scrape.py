@@ -2,18 +2,27 @@ import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from Helper import *
 import Constant
 
 class Scrape:
-    def __init__(self, numPages):
+    def __init__(self, numPages, AnimeDB):
+        cursor = AnimeDB.cursor()
         for i in xrange(numPages - 1):
             URL = Constant.ANIME_URL + "{0}".format(i+1)
-            self.scrapeShowLogic(URL)
             print ('Scraping page ' + URL)
+            shows = self.scrapeShowLogic(URL)
+            for show in shows:
+                sql = "INSERT INTO providedShows (showTitle, showURL) VALUES (%s, %s)"
+                val = (show["showTitle"], show["showURL"])
+                cursor.execute(sql, val)
+                AnimeDB.commit()
+                print(cursor.rowcount, "record inserted.")
         pass
 
     def scrapeShowLogic(self, url):
+        shows = []
         website = requests.get(url).content
         soup = BeautifulSoup(website, 'html.parser')
         body = soup.body
@@ -21,13 +30,16 @@ class Scrape:
         # Soup parsing
         aniDiv = soup.find('div', attrs={'class':'anime_list_body'})
         aniListings = aniDiv.find('ul', attrs={'class':'listing'})
-        listItems = aniListings.findAll('li')  
+        listItems = aniListings.findAll('li')
 
         if(not listItems): 
             print ("Couldn't find the shows page")
             return
         
-        for item in enumerate(listItems):
+        for counter, item in enumerate(listItems):
+
+            if (counter == 10):
+                break
             show = {}
             showTitle = Helper().encodeString(item.text)
 
@@ -57,9 +69,11 @@ class Scrape:
                 meta.append(Helper().encodeString(i.text))
 
             show['meta'] = meta
-            print (show)
+            shows.append(show)
             # this should to a database
+    
         print ("#### DONE ####")
+        return shows
 
     #This is for when we actuallly want to get the video embed link...
     def scrapeEpisodeVideo(self, url):
@@ -67,6 +81,7 @@ class Scrape:
         soup = BeautifulSoup(website, "html.parser")
         #I need to know find a div with id load_anime
         animeDiv = soup.find("div", attrs={"id":"load_anime"})
+        if (not animeDiv): return ""
         animeIframe = animeDiv.find("iframe")
         showLink = "https:" + Helper().encodeString(animeIframe.attrs["src"])
         return showLink
@@ -79,8 +94,13 @@ class Scrape:
         #The url here is for each of the internal episodes for the show
         options = Options()
         options.headless = True
+
         browser = webdriver.Firefox(options=options)
+        print ("here")
         browser.get(url)
+        browser.implicitly_wait(2)
+
+        #Use the BSoup parser here to speed this up
 
         try:
             parent = browser.find_element_by_id('load_ep')
@@ -94,5 +114,7 @@ class Scrape:
                 episodeLink = link.get_attribute('href')
                 episodes.append(Helper().encodeString(episodeLink))
             except:
-                pass        
+                pass
+        print ("here2")
+        browser.close()
         return episodes
