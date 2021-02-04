@@ -14,6 +14,7 @@ class Scrape:
             print ('Scraping page ' + URL)
             shows = self.scrapeShowLogic(URL)
             for show in shows:
+                print (show)
                 sql = "INSERT INTO providedShows (showTitle, showURL) VALUES (%s, %s)"
                 val = (show["showTitle"], show["showURL"])
                 cursor.execute(sql, val)
@@ -90,31 +91,35 @@ class Scrape:
     #Need Selenium for this section of the code
     #This will find the episodes and the link to the page where the video will be
     def scrapeShowEpisodeLogic(self, url):
+
+        website = requests.get(url).content
+
         episodes = []
         #The url here is for each of the internal episodes for the show
-        options = Options()
-        options.headless = True
+        # options = Options()
+        # options.headless = True
 
-        browser = webdriver.Firefox(options=options)
-        print ("here")
-        browser.get(url)
-        browser.implicitly_wait(2)
+        # browser = webdriver.Firefox(options=options)
+        # print ("here")
+        # browser.get(url)
+        # browser.implicitly_wait(2)
 
         #Use the BSoup parser here to speed this up
+        bs_obj = BeautifulSoup(website, 'html.parser')
 
         try:
-            parent = browser.find_element_by_id('load_ep')
-            links = parent.find_elements_by_tag_name("a")
+            parent = bs_obj.find(id='load_ep')
+            links = parent.findAll("a")
         except:
             print ('An error with the ep with selenium')
             return
 
         for link in links:
             try:
-                episodeLink = link.get_attribute('href')
+                episodeLink = link.find('href').text
                 episodes.append(Helper().encodeString(episodeLink))
             except:
+                print ("Erorrs")
                 pass
-        print ("here2")
-        browser.close()
+        # browser.close()
         return episodes
