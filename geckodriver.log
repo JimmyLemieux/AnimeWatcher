@@ -1,37 +1,133 @@
-1612230279499	geckodriver	INFO	Listening on 127.0.0.1:61247
-1612230280534	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/5g/17w8dbxj523509c73rnz1fhw0000gn/T/rust_mozprofileruNNF2"
+1612403112538	geckodriver	INFO	Listening on 127.0.0.1:51195
+1612403113546	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/var/folders/5g/17w8dbxj523509c73rnz1fhw0000gn/T/rust_mozprofileuQWtWC"
+*** You are running in headless mode.
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
-1612230283708	Marionette	INFO	Listening on port 61258
-1612230364553	geckodriver	INFO	Listening on 127.0.0.1:61330
-1612230365566	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/5g/17w8dbxj523509c73rnz1fhw0000gn/T/rust_mozprofileRDrW0t"
+1612403115875	Marionette	INFO	Listening on port 51206
+1612403115930	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1612403146689	geckodriver	INFO	Listening on 127.0.0.1:51387
+1612403147709	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/var/folders/5g/17w8dbxj523509c73rnz1fhw0000gn/T/rust_mozprofilefczPqt"
+*** You are running in headless mode.
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
-1612230367831	Marionette	INFO	Listening on port 61341
-1612230367936	Marionette	WARN	TLS certificate errors will be ignored for this session
-JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL context was lost.
-JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL context was lost.
-JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021121, line 1: WebGL context was lost.
-JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021121, line 1: WebGL context was lost.
-1612230423418	geckodriver	INFO	Listening on 127.0.0.1:61544
-1612230424436	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/5g/17w8dbxj523509c73rnz1fhw0000gn/T/rust_mozprofileNGt4uo"
+1612403149354	Marionette	INFO	Listening on port 51398
+1612403149466	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1612403167021	geckodriver	INFO	Listening on 127.0.0.1:51585
+1612403168034	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/var/folders/5g/17w8dbxj523509c73rnz1fhw0000gn/T/rust_mozprofile6kwlvd"
+*** You are running in headless mode.
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
-1612230427005	Marionette	INFO	Listening on port 61556
-1612230427103	Marionette	WARN	TLS certificate errors will be ignored for this session
-JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL context was lost.
-JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL context was lost.
-JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021121, line 1: WebGL context was lost.
-JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021121, line 1: WebGL context was lost.
-1612230521484	geckodriver	INFO	Listening on 127.0.0.1:61796
-1612230522498	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/5g/17w8dbxj523509c73rnz1fhw0000gn/T/rust_mozprofileFA9UwL"
+1612403169727	Marionette	INFO	Listening on port 51596
+1612403169804	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1612403190781	geckodriver	INFO	Listening on 127.0.0.1:51772
+1612403191796	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/var/folders/5g/17w8dbxj523509c73rnz1fhw0000gn/T/rust_mozprofilebOD73b"
+*** You are running in headless mode.
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
-1612230524880	Marionette	INFO	Listening on port 61808
-1612230524974	Marionette	WARN	TLS certificate errors will be ignored for this session
-JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL context was lost.
-JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL context was lost.
-JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021121, line 1: WebGL context was lost.
-JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021121, line 1: WebGL context was lost.
-1612230561116	geckodriver	INFO	Listening on 127.0.0.1:62071
-1612230562133	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/5g/17w8dbxj523509c73rnz1fhw0000gn/T/rust_mozprofileg9006o"
+1612403193512	Marionette	INFO	Listening on port 51783
+1612403193558	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1612403196597	geckodriver	INFO	Listening on 127.0.0.1:51888
+1612403197614	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/var/folders/5g/17w8dbxj523509c73rnz1fhw0000gn/T/rust_mozprofilezMftr4"
+*** You are running in headless mode.
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
-1612230564575	Marionette	INFO	Listening on port 62082
-1612230564598	Marionette	WARN	TLS certificate errors will be ignored for this session
-JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'MarionetteEvents'
+1612403199827	Marionette	INFO	Listening on port 51909
+1612403199914	Marionette	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+1612403205941	geckodriver	INFO	Listening on 127.0.0.1:52021
+1612403206962	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/var/folders/5g/17w8dbxj523509c73rnz1fhw0000gn/T/rust_mozprofilexkZVPd"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1612403208547	Marionette	INFO	Listening on port 52032
+1612403208610	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1612403227550	geckodriver	INFO	Listening on 127.0.0.1:52214
+1612403228570	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/var/folders/5g/17w8dbxj523509c73rnz1fhw0000gn/T/rust_mozprofileOE5KaD"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1612403230452	Marionette	INFO	Listening on port 52225
+1612403230538	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.834094.js, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://jsc.mgid.com/g/o/gogoanime.io.267364.js?t=2021141, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1612403239297	geckodriver	INFO	Listening on 127.0.0.1:52408
+1612403240317	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/var/folders/5g/17w8dbxj523509c73rnz1fhw0000gn/T/rust_mozprofileeSG4NO"
+*** You are running in headless mode.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.

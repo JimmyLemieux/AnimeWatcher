@@ -1,0 +1,1 @@
+ANIME_URL = "https://www4.gogoanime.io/anime-list.html?page="
